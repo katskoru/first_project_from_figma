@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/widgets.dart';
 import 'package:project_from_figma/screens/AnimatedContainer.dart';
 import 'package:project_from_figma/screens/ToDoApp.dart';
 import 'package:project_from_figma/screens/calculator.dart';
@@ -30,6 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               height: 75.0,
               child: ListTile(
+                contentPadding: EdgeInsets.all(8.0),
                 tileColor: Colors.grey,
                 leading: const Icon(
                   Icons.home,
@@ -52,6 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               height: 75.0,
               child: ListTile(
+                contentPadding: EdgeInsets.all(10.0),
                 tileColor: Colors.grey,
                 leading: const Icon(
                   Icons.search,
@@ -74,6 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               height: 75.0,
               child: ListTile(
+                contentPadding: EdgeInsets.all(10.0),
                 tileColor: Colors.grey,
                 leading: const Icon(
                   Icons.check,
