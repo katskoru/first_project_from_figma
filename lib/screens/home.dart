@@ -25,6 +25,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ListView(
           children: [
             SizedBox(
+              height: 40.0,
+            ),
+            SizedBox(
               height: 75.0,
               child: ListTile(
                 tileColor: Colors.grey,
@@ -33,7 +36,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.red,
                   size: 68.0,
                 ),
-                title: const Text('Home'),
+                title: const Text(
+                  "Home",
+                  style: TextStyle(fontSize: 40.0),
+                ),
                 onTap: () {
                   setState(() => index = 0);
                   Navigator.of(context).pop();
@@ -52,7 +58,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.black,
                   size: 68.0,
                 ),
-                title: const Text('Calculator'),
+                title: const Text(
+                  "Calculator",
+                  style: TextStyle(fontSize: 40.0),
+                ),
                 onTap: () {
                   setState(() => index = 1);
                   Navigator.of(context).pop();
@@ -71,7 +80,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.black,
                   size: 68.0,
                 ),
-                title: const Text('ToDoApp'),
+                title: const Text(
+                  "ToDoApp",
+                  style: TextStyle(fontSize: 40.0),
+                ),
                 onTap: () {
                   setState(() => index = 2);
                   Navigator.of(context).pop();
