@@ -35,7 +35,7 @@ class _MyAnContState extends State<MyAnCont> {
             width: width.toDouble(),
             height: height.toDouble(),
           ),
-          SizedBox(
+          Container(
             height: 70.0,
             width: 200.0,
             child: ElevatedButton(
