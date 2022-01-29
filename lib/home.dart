@@ -116,11 +116,17 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      // appBar: AppBar(
-      //   foregroundColor: Colors.black,
-      //   backgroundColor: Colors.grey,
-      //   iconTheme: IconThemeData(size: 38.0),
-      // ),
+      appBar: AppBar(
+        title: Center(
+          child: Text(
+            "My New App",
+            style: TextStyle(fontSize: 40.0),
+          ),
+        ),
+        foregroundColor: Colors.black,
+        backgroundColor: Colors.grey,
+        iconTheme: IconThemeData(size: 38.0),
+      ),
       body: screens[index],
     );
   }

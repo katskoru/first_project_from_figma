@@ -27,20 +27,11 @@ class _MyAnContState extends State<MyAnCont> {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              color: Colors.grey,
-              width: double.infinity,
-              height: 79.0,
-              child: Icon(
-                Icons.menu,
-                size: 68.0,
-              ),
-            ),
             Align(
               alignment: Alignment.center,
             ),
             Container(
-              height: 30.0,
+              height: 20.0,
             ),
             AnimatedContainer(
               duration: const Duration(milliseconds: 500),
@@ -49,7 +40,7 @@ class _MyAnContState extends State<MyAnCont> {
               height: height.toDouble(),
             ),
             Container(
-              height: 10.0,
+              height: 20.0,
             ),
             Container(
               height: 70.0,
@@ -57,9 +48,9 @@ class _MyAnContState extends State<MyAnCont> {
               child: ElevatedButton(
                   child: Text("Click me"),
                   style: ElevatedButton.styleFrom(
-                    shape: StadiumBorder(),
-                    shadowColor: Colors.grey,
-                  ),
+                      shape: StadiumBorder(),
+                      shadowColor: Colors.grey[900],
+                      elevation: 10.0),
                   onPressed: () {
                     setState(() {
                       _isInitialValue = !_isInitialValue;
