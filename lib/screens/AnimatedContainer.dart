@@ -35,19 +35,24 @@ class _MyAnContState extends State<MyAnCont> {
             width: width.toDouble(),
             height: height.toDouble(),
           ),
-          ElevatedButton(
-              child: Text("Click me"),
-              style: ElevatedButton.styleFrom(
-                shape: StadiumBorder(),
-              ),
-              onPressed: () {
-                setState(() {
-                  _isInitialValue = !_isInitialValue;
-                  width = Random().nextInt(500);
-                  height = Random().nextInt(500);
-                  index1 = Random().nextInt(list_of_colors.length - 1);
-                });
-              })
+          SizedBox(
+            height: 70.0,
+            width: 200.0,
+            child: ElevatedButton(
+                child: Text("Click me"),
+                style: ElevatedButton.styleFrom(
+                  shape: StadiumBorder(),
+                  shadowColor: Colors.grey,
+                ),
+                onPressed: () {
+                  setState(() {
+                    _isInitialValue = !_isInitialValue;
+                    width = Random().nextInt(500);
+                    height = Random().nextInt(500);
+                    index1 = Random().nextInt(list_of_colors.length - 1);
+                  });
+                }),
+          )
         ],
       ),
     );
