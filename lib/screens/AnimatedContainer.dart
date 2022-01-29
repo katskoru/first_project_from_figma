@@ -27,8 +27,9 @@ class _MyAnContState extends State<MyAnCont> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        mainAxisSize: MainAxisSize.max,
         children: [
-          Align(
+          const Align(
             alignment: Alignment.center,
           ),
           Container(
@@ -43,7 +44,7 @@ class _MyAnContState extends State<MyAnCont> {
           Container(
             height: 20.0,
           ),
-          Container(
+          SizedBox(
             height: 70.0,
             width: 300.0,
             child: ElevatedButton(
@@ -53,7 +54,7 @@ class _MyAnContState extends State<MyAnCont> {
                 ),
                 style: ElevatedButton.styleFrom(
                     primary: _isInitialValue ? Colors.green : Colors.blue,
-                    shape: StadiumBorder(),
+                    shape: const StadiumBorder(),
                     shadowColor: Colors.grey[900],
                     elevation: 10.0),
                 onPressed: () {
