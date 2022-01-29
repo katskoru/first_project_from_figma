@@ -9,8 +9,9 @@ class MyAnCont extends StatefulWidget {
   State<MyAnCont> createState() => _MyAnContState();
 }
 
+bool _isInitialValue = true;
+
 class _MyAnContState extends State<MyAnCont> {
-  bool _isInitialValue = true;
   var width = Random().nextInt(100);
   var height = Random().nextInt(100);
   List list_of_colors = [
@@ -48,14 +49,14 @@ class _MyAnContState extends State<MyAnCont> {
               child: ElevatedButton(
                   child: Text("Click me"),
                   style: ElevatedButton.styleFrom(
+                      primary: _isInitialValue ? Colors.green : Colors.blue,
                       shape: StadiumBorder(),
                       shadowColor: Colors.grey[900],
                       elevation: 10.0),
                   onPressed: () {
                     setState(() {
-                      //_isInitialValue = !_isInitialValue;
-                      color:
-                      _isInitialValue ? Colors.blue : Colors.green;
+                      _isInitialValue = !_isInitialValue;
+
                       width = Random().nextInt(300);
                       height = Random().nextInt(300);
                       index1 = Random().nextInt(list_of_colors.length - 1);
