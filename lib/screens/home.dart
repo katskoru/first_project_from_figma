@@ -22,56 +22,60 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       drawer: Drawer(
         elevation: 20.0,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: ListView(
           children: [
-            Container(
-              color: Colors.grey,
-              width: double.infinity,
-              child: Row(
-                children: const [
-                  Icon(
-                    Icons.home,
-                    size: 48.0,
-                    color: Colors.red,
-                  ),
-                  Text(
-                    "Home",
-                    style: TextStyle(fontSize: 48.0),
-                  )
-                ],
+            SizedBox(
+              height: 75.0,
+              child: ListTile(
+                tileColor: Colors.grey,
+                leading: const Icon(
+                  Icons.home,
+                  color: Colors.red,
+                  size: 68.0,
+                ),
+                title: const Text('Home'),
+                onTap: () {
+                  setState(() => index = 0);
+                  Navigator.of(context).pop();
+                },
               ),
             ),
-            Container(
-              color: Colors.grey,
-              width: double.infinity,
-              child: Row(
-                children: const [
-                  Icon(
-                    Icons.search,
-                    size: 48.0,
-                  ),
-                  Text(
-                    "Calculator",
-                    style: TextStyle(fontSize: 48.0),
-                  )
-                ],
+            const Divider(
+              height: 40.0,
+            ),
+            SizedBox(
+              height: 75.0,
+              child: ListTile(
+                tileColor: Colors.grey,
+                leading: const Icon(
+                  Icons.search,
+                  color: Colors.black,
+                  size: 68.0,
+                ),
+                title: const Text('Calculator'),
+                onTap: () {
+                  setState(() => index = 1);
+                  Navigator.of(context).pop();
+                },
               ),
             ),
-            Container(
-              color: Colors.grey,
-              width: double.infinity,
-              child: Row(
-                children: const [
-                  Icon(
-                    Icons.check,
-                    size: 48.0,
-                  ),
-                  Text(
-                    "ToDoApp",
-                    style: TextStyle(fontSize: 48.0),
-                  )
-                ],
+            const Divider(
+              height: 40.0,
+            ),
+            SizedBox(
+              height: 75.0,
+              child: ListTile(
+                tileColor: Colors.grey,
+                leading: const Icon(
+                  Icons.check,
+                  color: Colors.black,
+                  size: 68.0,
+                ),
+                title: const Text('ToDoApp'),
+                onTap: () {
+                  setState(() => index = 2);
+                  Navigator.of(context).pop();
+                },
               ),
             ),
           ],
