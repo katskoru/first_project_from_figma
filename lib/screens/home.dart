@@ -4,8 +4,6 @@ import 'package:project_from_figma/screens/ToDoApp.dart';
 import 'package:project_from_figma/screens/calculator.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
@@ -24,61 +22,59 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       drawer: Drawer(
         elevation: 20.0,
-        child: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                color: Colors.grey,
-                width: double.infinity,
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.home,
-                      size: 48.0,
-                      color: Colors.red,
-                    ),
-                    Text(
-                      "Home",
-                      style: TextStyle(fontSize: 48.0),
-                    )
-                  ],
-                ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              color: Colors.grey,
+              width: double.infinity,
+              child: Row(
+                children: const [
+                  Icon(
+                    Icons.home,
+                    size: 48.0,
+                    color: Colors.red,
+                  ),
+                  Text(
+                    "Home",
+                    style: TextStyle(fontSize: 48.0),
+                  )
+                ],
               ),
-              Container(
-                color: Colors.grey,
-                width: double.infinity,
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.search,
-                      size: 48.0,
-                    ),
-                    Text(
-                      "Calculator",
-                      style: TextStyle(fontSize: 48.0),
-                    )
-                  ],
-                ),
+            ),
+            Container(
+              color: Colors.grey,
+              width: double.infinity,
+              child: Row(
+                children: const [
+                  Icon(
+                    Icons.search,
+                    size: 48.0,
+                  ),
+                  Text(
+                    "Calculator",
+                    style: TextStyle(fontSize: 48.0),
+                  )
+                ],
               ),
-              Container(
-                color: Colors.grey,
-                width: double.infinity,
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.check,
-                      size: 48.0,
-                    ),
-                    Text(
-                      "ToDoApp",
-                      style: TextStyle(fontSize: 48.0),
-                    )
-                  ],
-                ),
+            ),
+            Container(
+              color: Colors.grey,
+              width: double.infinity,
+              child: Row(
+                children: const [
+                  Icon(
+                    Icons.check,
+                    size: 48.0,
+                  ),
+                  Text(
+                    "ToDoApp",
+                    style: TextStyle(fontSize: 48.0),
+                  )
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
       bottomNavigationBar: BottomAppBar(
@@ -88,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             IconButton(
                 iconSize: 68.0,
-                icon: Icon(Icons.home),
+                icon: const Icon(Icons.home),
                 color: Colors.red,
                 onPressed: () {
                   setState(() {
@@ -97,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 }),
             IconButton(
               iconSize: 68.0,
-              icon: Icon(Icons.search),
+              icon: const Icon(Icons.search),
               onPressed: () {
                 setState(() {
                   index = 1;
@@ -106,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             IconButton(
               iconSize: 68.0,
-              icon: Icon(Icons.check),
+              icon: const Icon(Icons.check),
               onPressed: () {
                 setState(() {
                   index = 2;
@@ -117,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text(
             "My New App",
             style: TextStyle(fontSize: 40.0),
@@ -125,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         foregroundColor: Colors.black,
         backgroundColor: Colors.grey,
-        iconTheme: IconThemeData(size: 38.0),
+        iconTheme: const IconThemeData(size: 38.0),
       ),
       body: screens[index],
     );

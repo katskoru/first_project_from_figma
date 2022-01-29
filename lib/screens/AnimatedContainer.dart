@@ -53,7 +53,9 @@ class _MyAnContState extends State<MyAnCont> {
                       elevation: 10.0),
                   onPressed: () {
                     setState(() {
-                      _isInitialValue = !_isInitialValue;
+                      //_isInitialValue = !_isInitialValue;
+                      color:
+                      _isInitialValue ? Colors.blue : Colors.green;
                       width = Random().nextInt(300);
                       height = Random().nextInt(300);
                       index1 = Random().nextInt(list_of_colors.length - 1);
