@@ -142,7 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         foregroundColor: Colors.black,
         backgroundColor: Colors.grey,
-        iconTheme: const IconThemeData(size: 38.0),
+        iconTheme: const IconThemeData(size: 45.0),
       ),
       body: screens[index],
     );

@@ -31,7 +31,7 @@ class _DoPageState extends State<DoPage> {
         title: MyTextWidget(
           text: "ToDoApp",
         ),
-        leading: Icon(Icons.list_alt_outlined),
+        leading: const Icon(Icons.list_alt_outlined),
         actions: [
           my_add_button(),
         ],
@@ -44,7 +44,8 @@ class _DoPageState extends State<DoPage> {
               child: Container(
                 child: Center(
                   child: TextFormField(
-                    style: TextStyle(color: Colors.white70, fontSize: 20.0),
+                    style:
+                        const TextStyle(color: Colors.white70, fontSize: 20.0),
                     textInputAction: TextInputAction.newline,
                     cursorHeight: 30.0,
                     cursorColor: Colors.white70,
@@ -52,7 +53,7 @@ class _DoPageState extends State<DoPage> {
                     minLines: 1,
                     maxLines: 5,
                     keyboardType: TextInputType.multiline,
-                    autofocus: true,
+                    autofocus: false,
                     decoration: InputDecoration(
                       prefix: my_add_button(),
                       border: InputBorder.none,
@@ -73,7 +74,7 @@ class _DoPageState extends State<DoPage> {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
                 itemCount: my_tasks.length,
                 itemBuilder: (context, index) {
