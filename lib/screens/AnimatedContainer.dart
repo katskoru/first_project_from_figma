@@ -26,6 +26,7 @@ class _MyAnContState extends State<MyAnCont> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.red[100],
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [

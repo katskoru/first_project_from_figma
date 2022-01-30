@@ -90,7 +90,7 @@ class _CalcPageState extends State<CalcPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blueGrey[50],
+        backgroundColor: Colors.green[300],
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Center(

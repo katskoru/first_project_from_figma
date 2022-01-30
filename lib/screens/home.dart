@@ -106,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
             IconButton(
                 iconSize: 68.0,
                 icon: const Icon(Icons.home),
-                color: Colors.red,
+                color: index == 0 ? Colors.red : Colors.black,
                 onPressed: () {
                   setState(() {
                     index = 0;
@@ -115,6 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
             IconButton(
               iconSize: 68.0,
               icon: const Icon(Icons.search),
+              color: index == 1 ? Colors.green : Colors.black,
               onPressed: () {
                 setState(() {
                   index = 1;
@@ -124,6 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
             IconButton(
               iconSize: 68.0,
               icon: const Icon(Icons.check),
+              color: index == 2 ? Colors.blue[900] : Colors.black,
               onPressed: () {
                 setState(() {
                   index = 2;
