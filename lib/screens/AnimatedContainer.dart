@@ -13,8 +13,8 @@ class MyAnCont extends StatefulWidget {
 bool _isInitialValue = true;
 
 class _MyAnContState extends State<MyAnCont> {
-  var width = Random().nextInt(100);
-  var height = Random().nextInt(100);
+  var width = 330;
+  var height = 255;
   List list_of_colors = [
     Colors.blue,
     Colors.amber,
@@ -61,7 +61,6 @@ class _MyAnContState extends State<MyAnCont> {
                 onPressed: () {
                   setState(() {
                     _isInitialValue = !_isInitialValue;
-
                     width = Random().nextInt(300);
                     height = Random().nextInt(300);
                     index1 = Random().nextInt(list_of_colors.length - 1);
