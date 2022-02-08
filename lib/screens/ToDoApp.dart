@@ -44,6 +44,7 @@ class _DoPageState extends State<DoPage> {
               child: Container(
                 child: Center(
                   child: TextFormField(
+                    obscureText: true,
                     style:
                         const TextStyle(color: Colors.white70, fontSize: 20.0),
                     textInputAction: TextInputAction.newline,
