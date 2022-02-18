@@ -44,7 +44,7 @@ class _DoPageState extends State<DoPage> {
               child: Container(
                 child: Center(
                   child: TextFormField(
-                    obscureText: true,
+                    obscureText: false,
                     style:
                         const TextStyle(color: Colors.white70, fontSize: 20.0),
                     textInputAction: TextInputAction.newline,
@@ -52,7 +52,7 @@ class _DoPageState extends State<DoPage> {
                     cursorColor: Colors.white70,
                     controller: controller,
                     minLines: 1,
-                    maxLines: 5,
+                    maxLines: 4,
                     keyboardType: TextInputType.multiline,
                     autofocus: false,
                     decoration: InputDecoration(

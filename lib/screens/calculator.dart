@@ -110,8 +110,8 @@ class _CalcPageState extends State<CalcPage> {
                       children: [
                         MyTextWidget(
                           text: equation,
-                          color: Colors.grey[600],
-                          size: 20.0,
+                          color: Colors.grey[700],
+                          size: 30.0,
                         ),
                       ],
                     ),
