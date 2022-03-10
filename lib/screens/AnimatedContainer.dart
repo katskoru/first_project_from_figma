@@ -14,7 +14,7 @@ bool _isInitialValue = true;
 
 class _MyAnContState extends State<MyAnCont> {
   var width = 330;
-  var height = 335;
+  var height = 505;
   List list_of_colors = [
     Colors.blue,
     Colors.amber,
@@ -34,14 +34,14 @@ class _MyAnContState extends State<MyAnCont> {
             alignment: Alignment.center,
           ),
           AnimatedContainer(
-            margin: EdgeInsets.all(20),
+            margin: const EdgeInsets.all(20),
             duration: const Duration(milliseconds: 500),
             color: list_of_colors[index1],
             width: width.toDouble(),
             height: height.toDouble(),
           ),
           Flexible(
-            flex: 3,
+            flex: 1,
             child: Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
