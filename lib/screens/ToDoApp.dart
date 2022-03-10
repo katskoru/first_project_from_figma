@@ -36,53 +36,56 @@ class _DoPageState extends State<DoPage> {
           my_add_button(),
         ],
       ),
-      body: ListView(
-        children: [
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                child: Center(
-                  child: TextFormField(
-                    obscureText: false,
-                    style:
-                        const TextStyle(color: Colors.white70, fontSize: 20.0),
-                    textInputAction: TextInputAction.newline,
-                    cursorHeight: 30.0,
-                    cursorColor: Colors.white70,
-                    controller: controller,
-                    minLines: 1,
-                    maxLines: 4,
-                    keyboardType: TextInputType.multiline,
-                    autofocus: false,
-                    decoration: InputDecoration(
-                      prefix: my_add_button(),
-                      border: InputBorder.none,
+      body: Container(
+        height: 300,
+        child: ListView(
+          children: [
+            Center(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  child: Center(
+                    child: TextFormField(
+                      obscureText: false,
+                      style: const TextStyle(
+                          color: Colors.white70, fontSize: 20.0),
+                      textInputAction: TextInputAction.newline,
+                      cursorHeight: 30.0,
+                      cursorColor: Colors.white70,
+                      controller: controller,
+                      minLines: 1,
+                      maxLines: 4,
+                      keyboardType: TextInputType.multiline,
+                      autofocus: false,
+                      decoration: InputDecoration(
+                        prefix: my_add_button(),
+                        border: InputBorder.none,
+                      ),
                     ),
                   ),
+                  width: MediaQuery.of(context).size.width - 12.0,
+                  height: 70.0,
+                  decoration: BoxDecoration(
+                      color: Colors.blue,
+                      border: Border.all(
+                        color: Colors.white70,
+                        width: 5.0,
+                      )),
                 ),
-                width: MediaQuery.of(context).size.width - 12.0,
-                height: 70.0,
-                decoration: BoxDecoration(
-                    color: Colors.blue,
-                    border: Border.all(
-                      color: Colors.white70,
-                      width: 5.0,
-                    )),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: my_tasks.length,
-                itemBuilder: (context, index) {
-                  return myTask(index);
-                }),
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ListView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: my_tasks.length,
+                  itemBuilder: (context, index) {
+                    return myTask(index);
+                  }),
+            )
+          ],
+        ),
       ),
     );
   }

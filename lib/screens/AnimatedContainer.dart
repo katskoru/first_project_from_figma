@@ -33,17 +33,12 @@ class _MyAnContState extends State<MyAnCont> {
           const Align(
             alignment: Alignment.center,
           ),
-          Container(
-            height: 20.0,
-          ),
           AnimatedContainer(
+            margin: EdgeInsets.all(20),
             duration: const Duration(milliseconds: 500),
             color: list_of_colors[index1],
             width: width.toDouble(),
             height: height.toDouble(),
-          ),
-          Container(
-            height: 20.0,
           ),
           SizedBox(
             height: 70.0,
