@@ -4,7 +4,7 @@ import 'package:flutter_tabler_icons/flutter_tabler_icons.dart';
 import 'package:math_expressions/math_expressions.dart';
 
 class CalcPage extends StatefulWidget {
-  CalcPage({Key? key}) : super(key: key);
+  const CalcPage({Key? key}) : super(key: key);
 
   @override
   State<CalcPage> createState() => _CalcPageState();
@@ -94,137 +94,126 @@ class _CalcPageState extends State<CalcPage> {
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Center(
-            child: ListView(
-                // wyśrodkowuje, warto stosować
-                shrinkWrap: true,
-                // mainAxisAlignment: MainAxisAlignment.center,
-                // crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Center(
-                      child: Container(
-                    height: 50.0,
-                    width: MediaQuery.of(context).size.width - 16,
-                    child: ListView(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        MyTextWidget(
-                          text: equation,
-                          color: Colors.grey[700],
-                          size: 30.0,
-                        ),
-                      ],
+            child: ListView(shrinkWrap: true, children: [
+              Center(
+                  child: Container(
+                height: 30.0,
+                width: MediaQuery.of(context).size.width - 16,
+                child: ListView(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    MyTextWidget(
+                      text: equation,
+                      color: Colors.grey[700],
+                      size: 25.0,
                     ),
-                  )),
-                  const SizedBox(
-                    height: 20.0,
+                  ],
+                ),
+              )),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  MyTextWidget(
+                    text: sum,
+                    color: Colors.black,
+                    size: 25.0,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      MyTextWidget(
-                        text: sum,
-                        color: Colors.black,
-                        size: 30.0,
-                      ),
-                    ],
+                ],
+              ),
+
+              const Divider(
+                color: Colors.grey,
+                thickness: 1.5,
+              ),
+              // Container(
+              //   width: 250.0,
+              //   height: 100.0,
+              //   child: ListView.builder(
+              //       scrollDirection: Axis.horizontal,
+              //       shrinkWrap: true,
+              //       itemCount: 4,
+              //       itemBuilder: (ctxt, index) {
+              //         return myButton(functionButtons[index], () {});
+              //       }),
+              // ),
+              GridView.builder(
+                  // definicja w jaki sposób mamy scrollować:
+                  // powoduje, że lista w liście nie będzie się scrollować:
+                  physics: const NeverScrollableScrollPhysics(),
+                  reverse: true,
+                  shrinkWrap: true,
+                  itemCount: listOfButtons.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 4,
+                    childAspectRatio: 1.2,
                   ),
-                  const SizedBox(
-                    height: 8.0,
-                  ),
-                  const Divider(
-                    color: Colors.grey,
-                    thickness: 1.5,
-                  ),
-                  // Container(
-                  //   width: 250.0,
-                  //   height: 100.0,
-                  //   child: ListView.builder(
-                  //       scrollDirection: Axis.horizontal,
-                  //       shrinkWrap: true,
-                  //       itemCount: 4,
-                  //       itemBuilder: (ctxt, index) {
-                  //         return myButton(functionButtons[index], () {});
-                  //       }),
-                  // ),
-                  GridView.builder(
-                      // definicja w jaki sposób mamy scrollować:
-                      // powoduje, że lista w liście nie będzie się scrollować:
-                      physics: const NeverScrollableScrollPhysics(),
-                      reverse: true,
-                      shrinkWrap: true,
-                      itemCount: listOfButtons.length,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 4,
-                        childAspectRatio: 1.2,
-                      ),
-                      itemBuilder: (contx, index) {
-                        return myButton(listOfButtons[index], () {
-                          if (listOfButtons[index] is String &&
-                              listOfButtons[index] != 'CE' &&
-                              listOfButtons[index] != 'C' &&
-                              listOfButtons[index] != '1/x') {
-                            // if (int.tryParse(listOfButtons[index]) is int) {
-                            // setState odświeża render:
-                            setState(() {
-                              equation = equation! + listOfButtons[index];
-                            });
+                  itemBuilder: (contx, index) {
+                    return myButton(listOfButtons[index], () {
+                      if (listOfButtons[index] is String &&
+                          listOfButtons[index] != 'CE' &&
+                          listOfButtons[index] != 'C' &&
+                          listOfButtons[index] != '1/x') {
+                        // if (int.tryParse(listOfButtons[index]) is int) {
+                        // setState odświeża render:
+                        setState(() {
+                          equation = equation! + listOfButtons[index];
+                        });
 
-                            // }
-                          }
-                          if (listOfButtons[index] is String &&
-                                  listOfButtons[index] == "C" ||
-                              listOfButtons[index] == "CE") {
-                            setState(() {
-                              equation = " ";
-                              sum = "0";
-                            });
+                        // }
+                      }
+                      if (listOfButtons[index] is String &&
+                              listOfButtons[index] == "C" ||
+                          listOfButtons[index] == "CE") {
+                        setState(() {
+                          equation = " ";
+                          sum = "0";
+                        });
 
-                            // setState odświeża render:
+                        // setState odświeża render:
 
-                          }
+                      }
 
-                          if (listOfButtons[index] is Icon) {
-                            Icon icon = listOfButtons[index];
+                      if (listOfButtons[index] is Icon) {
+                        Icon icon = listOfButtons[index];
 
-                            if (icon.icon == TablerIcons.backspace) {
-                              setState(() {
-                                equation = equation!
-                                    .substring(0, equation!.length - 1);
-                              });
-                            } else if (icon.icon == TablerIcons.equal) {
-                              sumFunction(equation!);
-                            } else if (icon.icon == TablerIcons.percentage) {
-                              setState(() {
-                                equation = '($equation)/100';
-                              });
-                            } else if (icon.icon == TablerIcons.square_root) {
-                              setState(() {
-                                equation = "√($equation)";
-                              });
-                            } else if (icon.icon == TablerIcons.superscript) {
-                              setState(() {
-                                equation = "($equation)^2";
-                              });
-                            }
-                          }
-                          if (index == listOfButtons.length - 1) {
-                            setState(() {
-                              equation = '($equation)^(-1)';
-                            });
-                          }
-                          if (index == 0) {
-                            sum!.startsWith('-')
-                                ? sum = sum!.replaceFirst('-', '')
-                                : sum = '-' + sum!;
-                          }
-                        },
-                            index >= listOfButtons.length - 4
-                                ? Colors.white
-                                : null);
-                      })
-                ]),
+                        if (icon.icon == TablerIcons.backspace) {
+                          setState(() {
+                            equation =
+                                equation!.substring(0, equation!.length - 1);
+                          });
+                        } else if (icon.icon == TablerIcons.equal) {
+                          sumFunction(equation!);
+                        } else if (icon.icon == TablerIcons.percentage) {
+                          setState(() {
+                            equation = '($equation)/100';
+                          });
+                        } else if (icon.icon == TablerIcons.square_root) {
+                          setState(() {
+                            equation = "√($equation)";
+                          });
+                        } else if (icon.icon == TablerIcons.superscript) {
+                          setState(() {
+                            equation = "($equation)^2";
+                          });
+                        }
+                      }
+                      if (index == listOfButtons.length - 1) {
+                        setState(() {
+                          equation = '($equation)^(-1)';
+                        });
+                      }
+                      if (index == 0) {
+                        sum!.startsWith('-')
+                            ? sum = sum!.replaceFirst('-', '')
+                            : sum = '-' + sum!;
+                      }
+                    }, index >= listOfButtons.length - 4 ? Colors.white : null);
+                  })
+            ]),
           ),
         ));
   }
